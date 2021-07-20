@@ -114,6 +114,9 @@ Public Class Pr_HistorialSevLav
             listEstCeldas.Add(New Modelos.Celda("lansoc", True, "NUMERO DE SOCIO", 120))
             listEstCeldas.Add(New Modelos.Celda("VehiculoRegistrado", False))
             listEstCeldas.Add(New Modelos.Celda("laci", True, "CI", 80))
+            listEstCeldas.Add(New Modelos.Celda("tipo", False))
+            listEstCeldas.Add(New Modelos.Celda("acb", False))
+            listEstCeldas.Add(New Modelos.Celda("latipo", False))
 
             frmAyuda = New Modelos.ModeloAyuda(350, 300, dt, "seleccione Cliente".ToUpper, listEstCeldas)
             frmAyuda.ShowDialog()

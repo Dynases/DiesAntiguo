@@ -195,6 +195,7 @@ Public Class F0_Socio
         Cb1TipoSocio.Select()
         rlAccion.Text = "MODIFICAR"
         P_EstadoNueModEli(2)
+        Dgv1Telefonos.ReadOnly = True
     End Sub
 
     Private Sub P_Eliminar()
@@ -2290,15 +2291,15 @@ Public Class F0_Socio
     End Sub
     Private Sub Dgd2Vehiculos_Click(sender As Object, e As EventArgs) Handles Dgd2Vehiculos.Click
 
-        Dim rutaImagenVehiculo As String = stRutaRaiz + "\Socio_" + Dgd2Vehiculos.GetValue("cinumi").ToString + "\Vehiculo_" + Dgd2Vehiculos.GetValue("cilin").ToString
-        If (Dgd2Vehiculos.CurrentColumn.Key.Equals("imgVehiculo")) Then
-            _prValidarRuta(rutaImagenVehiculo)
-            Dim files As String() = Directory.GetFiles(rutaImagenVehiculo)
-            If (files.Count > 0) Then
-                Shell("rundll32.exe C:\WINDOWS\system32\shimgvw.dll,ImageView_Fullscreen " + files(0))
+        'Dim rutaImagenVehiculo As String = stRutaRaiz + "\Socio_" + Dgd2Vehiculos.GetValue("cinumi").ToString + "\Vehiculo_" + Dgd2Vehiculos.GetValue("cilin").ToString
+        'If (Dgd2Vehiculos.CurrentColumn.Key.Equals("imgVehiculo")) Then
+        '    _prValidarRuta(rutaImagenVehiculo)
+        '    Dim files As String() = Directory.GetFiles(rutaImagenVehiculo)
+        '    If (files.Count > 0) Then
+        '        Shell("rundll32.exe C:\WINDOWS\system32\shimgvw.dll,ImageView_Fullscreen " + files(0))
 
-            End If
-        End If
+        '    End If
+        'End If
     End Sub
 End Class
 

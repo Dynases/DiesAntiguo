@@ -1345,9 +1345,6 @@ Public Class F0_RecepcionLavadero
                 tbClienteSocio.Value = True
                 _prCargarGridAyudaPlacaCLiente()
 
-
-
-
             End If
         End If
     End Sub
