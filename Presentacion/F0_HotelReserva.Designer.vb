@@ -740,7 +740,7 @@ Partial Class F0_HotelReserva
         Me.msRegReservas.ImageScalingSize = New System.Drawing.Size(20, 20)
         Me.msRegReservas.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.VERRESERVAToolStripMenuItem, Me.ADICIONARRECLAMOToolStripMenuItem, Me.MODIFICARRESERVAToolStripMenuItem, Me.MODIFICARDATOSDERESERVAToolStripMenuItem, Me.ELIMINARRESERVAToolStripMenuItem})
         Me.msRegReservas.Name = "msRegReservas"
-        Me.msRegReservas.Size = New System.Drawing.Size(259, 184)
+        Me.msRegReservas.Size = New System.Drawing.Size(259, 206)
         '
         'VERRESERVAToolStripMenuItem
         '

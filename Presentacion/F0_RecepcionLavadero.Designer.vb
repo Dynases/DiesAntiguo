@@ -28,12 +28,6 @@ Partial Class F0_RecepcionLavadero
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(F0_RecepcionLavadero))
         Dim cbTamano_DesignTimeLayout As Janus.Windows.GridEX.GridEXLayout = New Janus.Windows.GridEX.GridEXLayout()
         Me.SuperTabControl1 = New DevComponents.DotNetBar.SuperTabControl()
-        Me.SuperTabControlPanel2 = New DevComponents.DotNetBar.SuperTabControlPanel()
-        Me.PanelVerImagen = New System.Windows.Forms.Panel()
-        Me.btnDelete = New DevComponents.DotNetBar.ButtonX()
-        Me.pbImgProdu = New System.Windows.Forms.PictureBox()
-        Me.PanelListImagenes = New System.Windows.Forms.Panel()
-        Me.SuperTabItem2 = New DevComponents.DotNetBar.SuperTabItem()
         Me.SuperTabControlPanel1 = New DevComponents.DotNetBar.SuperTabControlPanel()
         Me.Panel4 = New System.Windows.Forms.Panel()
         Me.GpVentasSinCobrar = New DevComponents.DotNetBar.Controls.GroupPanel()
@@ -149,6 +143,12 @@ Partial Class F0_RecepcionLavadero
         Me.cbb9 = New DevComponents.DotNetBar.Controls.CheckBoxX()
         Me.cb9 = New DevComponents.DotNetBar.Controls.CheckBoxX()
         Me.SuperTabItem1 = New DevComponents.DotNetBar.SuperTabItem()
+        Me.SuperTabControlPanel2 = New DevComponents.DotNetBar.SuperTabControlPanel()
+        Me.PanelVerImagen = New System.Windows.Forms.Panel()
+        Me.btnDelete = New DevComponents.DotNetBar.ButtonX()
+        Me.pbImgProdu = New System.Windows.Forms.PictureBox()
+        Me.PanelListImagenes = New System.Windows.Forms.Panel()
+        Me.SuperTabItem2 = New DevComponents.DotNetBar.SuperTabItem()
         Me.SuperTabControlPanel5 = New DevComponents.DotNetBar.SuperTabControlPanel()
         Me.GroupPanel3 = New DevComponents.DotNetBar.Controls.GroupPanel()
         Me.Panel2 = New System.Windows.Forms.Panel()
@@ -173,9 +173,6 @@ Partial Class F0_RecepcionLavadero
         CType(Me.MEP, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.SuperTabControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuperTabControl1.SuspendLayout()
-        Me.SuperTabControlPanel2.SuspendLayout()
-        Me.PanelVerImagen.SuspendLayout()
-        CType(Me.pbImgProdu, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuperTabControlPanel1.SuspendLayout()
         Me.Panel4.SuspendLayout()
         Me.GpVentasSinCobrar.SuspendLayout()
@@ -215,6 +212,9 @@ Partial Class F0_RecepcionLavadero
         Me.Panel12.SuspendLayout()
         Me.Panel14.SuspendLayout()
         Me.Panel13.SuspendLayout()
+        Me.SuperTabControlPanel2.SuspendLayout()
+        Me.PanelVerImagen.SuspendLayout()
+        CType(Me.pbImgProdu, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuperTabControlPanel5.SuspendLayout()
         Me.GroupPanel3.SuspendLayout()
         Me.Panel2.SuspendLayout()
@@ -236,7 +236,7 @@ Partial Class F0_RecepcionLavadero
         Me.SuperTabPrincipal.ControlBox.MenuBox.Name = ""
         Me.SuperTabPrincipal.ControlBox.Name = ""
         Me.SuperTabPrincipal.ControlBox.SubItems.AddRange(New DevComponents.DotNetBar.BaseItem() {Me.SuperTabPrincipal.ControlBox.MenuBox, Me.SuperTabPrincipal.ControlBox.CloseBox})
-        Me.SuperTabPrincipal.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.SuperTabPrincipal.Margin = New System.Windows.Forms.Padding(4)
         Me.SuperTabPrincipal.Size = New System.Drawing.Size(1023, 609)
         Me.SuperTabPrincipal.Controls.SetChildIndex(Me.SuperTabControlPanelBuscador, 0)
         Me.SuperTabPrincipal.Controls.SetChildIndex(Me.SuperTabControlPanelRegistro, 0)
@@ -244,12 +244,12 @@ Partial Class F0_RecepcionLavadero
         'SuperTabControlPanelBuscador
         '
         Me.SuperTabControlPanelBuscador.Location = New System.Drawing.Point(0, 23)
-        Me.SuperTabControlPanelBuscador.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.SuperTabControlPanelBuscador.Margin = New System.Windows.Forms.Padding(2)
         Me.SuperTabControlPanelBuscador.Size = New System.Drawing.Size(884, 538)
         '
         'SuperTabControlPanelRegistro
         '
-        Me.SuperTabControlPanelRegistro.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.SuperTabControlPanelRegistro.Margin = New System.Windows.Forms.Padding(4)
         Me.SuperTabControlPanelRegistro.Size = New System.Drawing.Size(1023, 584)
         Me.SuperTabControlPanelRegistro.Controls.SetChildIndex(Me.PanelSuperior, 0)
         Me.SuperTabControlPanelRegistro.Controls.SetChildIndex(Me.PanelInferior, 0)
@@ -258,7 +258,7 @@ Partial Class F0_RecepcionLavadero
         'PanelSuperior
         '
         Me.PanelSuperior.Controls.Add(Me.swestado)
-        Me.PanelSuperior.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.PanelSuperior.Margin = New System.Windows.Forms.Padding(4)
         Me.PanelSuperior.Size = New System.Drawing.Size(1023, 72)
         Me.PanelSuperior.Style.Alignment = System.Drawing.StringAlignment.Center
         Me.PanelSuperior.Style.BackColor1.Color = System.Drawing.Color.Yellow
@@ -275,7 +275,7 @@ Partial Class F0_RecepcionLavadero
         'PanelInferior
         '
         Me.PanelInferior.Location = New System.Drawing.Point(0, 548)
-        Me.PanelInferior.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.PanelInferior.Margin = New System.Windows.Forms.Padding(4)
         Me.PanelInferior.Size = New System.Drawing.Size(1023, 36)
         Me.PanelInferior.Style.Alignment = System.Drawing.StringAlignment.Center
         Me.PanelInferior.Style.BackColor1.Color = System.Drawing.Color.Gold
@@ -328,7 +328,7 @@ Partial Class F0_RecepcionLavadero
         Me.PanelToolBar2.Controls.Add(Me.btnImagen)
         Me.PanelToolBar2.Controls.Add(Me.btnCamara)
         Me.PanelToolBar2.Location = New System.Drawing.Point(776, 0)
-        Me.PanelToolBar2.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.PanelToolBar2.Margin = New System.Windows.Forms.Padding(4)
         Me.PanelToolBar2.Size = New System.Drawing.Size(247, 72)
         Me.PanelToolBar2.Controls.SetChildIndex(Me.btnImprimir, 0)
         Me.PanelToolBar2.Controls.SetChildIndex(Me.btnCamara, 0)
@@ -337,7 +337,7 @@ Partial Class F0_RecepcionLavadero
         'PanelPrincipal
         '
         Me.PanelPrincipal.Controls.Add(Me.SuperTabControl1)
-        Me.PanelPrincipal.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.PanelPrincipal.Margin = New System.Windows.Forms.Padding(4)
         Me.PanelPrincipal.Size = New System.Drawing.Size(1023, 476)
         Me.PanelPrincipal.Controls.SetChildIndex(Me.PanelUsuario, 0)
         Me.PanelPrincipal.Controls.SetChildIndex(Me.SuperTabControl1, 0)
@@ -345,7 +345,7 @@ Partial Class F0_RecepcionLavadero
         'btnImprimir
         '
         Me.btnImprimir.Location = New System.Drawing.Point(175, 0)
-        Me.btnImprimir.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btnImprimir.Margin = New System.Windows.Forms.Padding(4)
         '
         'btnUltimo
         '
@@ -363,7 +363,7 @@ Partial Class F0_RecepcionLavadero
         'MPanelUserAct
         '
         Me.MPanelUserAct.Location = New System.Drawing.Point(823, 0)
-        Me.MPanelUserAct.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.MPanelUserAct.Margin = New System.Windows.Forms.Padding(4)
         '
         'MRlAccion
         '
@@ -409,72 +409,6 @@ Partial Class F0_RecepcionLavadero
         Me.SuperTabControl1.Text = "DATOS"
         Me.SuperTabControl1.TextAlignment = DevComponents.DotNetBar.eItemAlignment.Far
         '
-        'SuperTabControlPanel2
-        '
-        Me.SuperTabControlPanel2.Controls.Add(Me.PanelVerImagen)
-        Me.SuperTabControlPanel2.Controls.Add(Me.PanelListImagenes)
-        Me.SuperTabControlPanel2.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.SuperTabControlPanel2.Location = New System.Drawing.Point(0, 0)
-        Me.SuperTabControlPanel2.Name = "SuperTabControlPanel2"
-        Me.SuperTabControlPanel2.Size = New System.Drawing.Size(999, 479)
-        Me.SuperTabControlPanel2.TabIndex = 0
-        Me.SuperTabControlPanel2.TabItem = Me.SuperTabItem2
-        '
-        'PanelVerImagen
-        '
-        Me.PanelVerImagen.BackColor = System.Drawing.Color.Transparent
-        Me.PanelVerImagen.Controls.Add(Me.btnDelete)
-        Me.PanelVerImagen.Controls.Add(Me.pbImgProdu)
-        Me.PanelVerImagen.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.PanelVerImagen.Location = New System.Drawing.Point(282, 0)
-        Me.PanelVerImagen.Name = "PanelVerImagen"
-        Me.PanelVerImagen.Size = New System.Drawing.Size(717, 479)
-        Me.PanelVerImagen.TabIndex = 1
-        '
-        'btnDelete
-        '
-        Me.btnDelete.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton
-        Me.btnDelete.BackColor = System.Drawing.Color.Transparent
-        Me.btnDelete.ColorTable = DevComponents.DotNetBar.eButtonColor.Flat
-        Me.btnDelete.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnDelete.Image = Global.Presentacion.My.Resources.Resources._051_prohibition
-        Me.btnDelete.ImageFixedSize = New System.Drawing.Size(60, 60)
-        Me.btnDelete.ImagePosition = DevComponents.DotNetBar.eImagePosition.Top
-        Me.btnDelete.Location = New System.Drawing.Point(8, 8)
-        Me.btnDelete.Name = "btnDelete"
-        Me.btnDelete.Padding = New System.Windows.Forms.Padding(0, 0, 0, 20)
-        Me.btnDelete.Size = New System.Drawing.Size(87, 72)
-        Me.btnDelete.Style = DevComponents.DotNetBar.eDotNetBarStyle.OfficeMobile2014
-        Me.btnDelete.TabIndex = 14
-        Me.btnDelete.TextColor = System.Drawing.Color.White
-        '
-        'pbImgProdu
-        '
-        Me.pbImgProdu.BackColor = System.Drawing.Color.White
-        Me.pbImgProdu.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.pbImgProdu.Location = New System.Drawing.Point(0, 0)
-        Me.pbImgProdu.Name = "pbImgProdu"
-        Me.pbImgProdu.Size = New System.Drawing.Size(717, 479)
-        Me.pbImgProdu.TabIndex = 0
-        Me.pbImgProdu.TabStop = False
-        '
-        'PanelListImagenes
-        '
-        Me.PanelListImagenes.AutoScroll = True
-        Me.PanelListImagenes.BackColor = System.Drawing.Color.WhiteSmoke
-        Me.PanelListImagenes.Dock = System.Windows.Forms.DockStyle.Left
-        Me.PanelListImagenes.Location = New System.Drawing.Point(0, 0)
-        Me.PanelListImagenes.Name = "PanelListImagenes"
-        Me.PanelListImagenes.Size = New System.Drawing.Size(282, 479)
-        Me.PanelListImagenes.TabIndex = 0
-        '
-        'SuperTabItem2
-        '
-        Me.SuperTabItem2.AttachedControl = Me.SuperTabControlPanel2
-        Me.SuperTabItem2.GlobalItem = False
-        Me.SuperTabItem2.Name = "SuperTabItem2"
-        Me.SuperTabItem2.Text = "IMAGENES"
-        '
         'SuperTabControlPanel1
         '
         Me.SuperTabControlPanel1.Controls.Add(Me.Panel4)
@@ -507,7 +441,7 @@ Partial Class F0_RecepcionLavadero
         Me.GpVentasSinCobrar.Font = New System.Drawing.Font("Arial", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GpVentasSinCobrar.Location = New System.Drawing.Point(561, 0)
         Me.GpVentasSinCobrar.Name = "GpVentasSinCobrar"
-        Me.GpVentasSinCobrar.Padding = New System.Windows.Forms.Padding(3, 3, 3, 3)
+        Me.GpVentasSinCobrar.Padding = New System.Windows.Forms.Padding(3)
         Me.GpVentasSinCobrar.Size = New System.Drawing.Size(434, 230)
         '
         '
@@ -2341,6 +2275,72 @@ Partial Class F0_RecepcionLavadero
         Me.SuperTabItem1.TabFont = New System.Drawing.Font("Georgia", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.SuperTabItem1.Text = "DATOS"
         '
+        'SuperTabControlPanel2
+        '
+        Me.SuperTabControlPanel2.Controls.Add(Me.PanelVerImagen)
+        Me.SuperTabControlPanel2.Controls.Add(Me.PanelListImagenes)
+        Me.SuperTabControlPanel2.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.SuperTabControlPanel2.Location = New System.Drawing.Point(0, 0)
+        Me.SuperTabControlPanel2.Name = "SuperTabControlPanel2"
+        Me.SuperTabControlPanel2.Size = New System.Drawing.Size(999, 479)
+        Me.SuperTabControlPanel2.TabIndex = 0
+        Me.SuperTabControlPanel2.TabItem = Me.SuperTabItem2
+        '
+        'PanelVerImagen
+        '
+        Me.PanelVerImagen.BackColor = System.Drawing.Color.Transparent
+        Me.PanelVerImagen.Controls.Add(Me.btnDelete)
+        Me.PanelVerImagen.Controls.Add(Me.pbImgProdu)
+        Me.PanelVerImagen.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.PanelVerImagen.Location = New System.Drawing.Point(282, 0)
+        Me.PanelVerImagen.Name = "PanelVerImagen"
+        Me.PanelVerImagen.Size = New System.Drawing.Size(717, 479)
+        Me.PanelVerImagen.TabIndex = 1
+        '
+        'btnDelete
+        '
+        Me.btnDelete.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton
+        Me.btnDelete.BackColor = System.Drawing.Color.Transparent
+        Me.btnDelete.ColorTable = DevComponents.DotNetBar.eButtonColor.Flat
+        Me.btnDelete.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnDelete.Image = Global.Presentacion.My.Resources.Resources._051_prohibition
+        Me.btnDelete.ImageFixedSize = New System.Drawing.Size(60, 60)
+        Me.btnDelete.ImagePosition = DevComponents.DotNetBar.eImagePosition.Top
+        Me.btnDelete.Location = New System.Drawing.Point(8, 8)
+        Me.btnDelete.Name = "btnDelete"
+        Me.btnDelete.Padding = New System.Windows.Forms.Padding(0, 0, 0, 20)
+        Me.btnDelete.Size = New System.Drawing.Size(87, 72)
+        Me.btnDelete.Style = DevComponents.DotNetBar.eDotNetBarStyle.OfficeMobile2014
+        Me.btnDelete.TabIndex = 14
+        Me.btnDelete.TextColor = System.Drawing.Color.White
+        '
+        'pbImgProdu
+        '
+        Me.pbImgProdu.BackColor = System.Drawing.Color.White
+        Me.pbImgProdu.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.pbImgProdu.Location = New System.Drawing.Point(0, 0)
+        Me.pbImgProdu.Name = "pbImgProdu"
+        Me.pbImgProdu.Size = New System.Drawing.Size(717, 479)
+        Me.pbImgProdu.TabIndex = 0
+        Me.pbImgProdu.TabStop = False
+        '
+        'PanelListImagenes
+        '
+        Me.PanelListImagenes.AutoScroll = True
+        Me.PanelListImagenes.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.PanelListImagenes.Dock = System.Windows.Forms.DockStyle.Left
+        Me.PanelListImagenes.Location = New System.Drawing.Point(0, 0)
+        Me.PanelListImagenes.Name = "PanelListImagenes"
+        Me.PanelListImagenes.Size = New System.Drawing.Size(282, 479)
+        Me.PanelListImagenes.TabIndex = 0
+        '
+        'SuperTabItem2
+        '
+        Me.SuperTabItem2.AttachedControl = Me.SuperTabControlPanel2
+        Me.SuperTabItem2.GlobalItem = False
+        Me.SuperTabItem2.Name = "SuperTabItem2"
+        Me.SuperTabItem2.Text = "IMAGENES"
+        '
         'SuperTabControlPanel5
         '
         Me.SuperTabControlPanel5.Controls.Add(Me.GroupPanel3)
@@ -2481,7 +2481,7 @@ Partial Class F0_RecepcionLavadero
         Me.swestado.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square
         Me.swestado.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.swestado.Location = New System.Drawing.Point(574, 24)
-        Me.swestado.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.swestado.Margin = New System.Windows.Forms.Padding(2)
         Me.swestado.Name = "swestado"
         Me.swestado.OffBackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer))
         Me.swestado.OffText = "No Procesado"
@@ -2497,7 +2497,7 @@ Partial Class F0_RecepcionLavadero
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1023, 609)
-        Me.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Margin = New System.Windows.Forms.Padding(4)
         Me.Name = "F0_RecepcionLavadero"
         Me.Text = "F0_NControlLavadero"
         Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
@@ -2519,9 +2519,6 @@ Partial Class F0_RecepcionLavadero
         CType(Me.MEP, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.SuperTabControl1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.SuperTabControl1.ResumeLayout(False)
-        Me.SuperTabControlPanel2.ResumeLayout(False)
-        Me.PanelVerImagen.ResumeLayout(False)
-        CType(Me.pbImgProdu, System.ComponentModel.ISupportInitialize).EndInit()
         Me.SuperTabControlPanel1.ResumeLayout(False)
         Me.Panel4.ResumeLayout(False)
         Me.GpVentasSinCobrar.ResumeLayout(False)
@@ -2565,6 +2562,9 @@ Partial Class F0_RecepcionLavadero
         Me.Panel12.ResumeLayout(False)
         Me.Panel14.ResumeLayout(False)
         Me.Panel13.ResumeLayout(False)
+        Me.SuperTabControlPanel2.ResumeLayout(False)
+        Me.PanelVerImagen.ResumeLayout(False)
+        CType(Me.pbImgProdu, System.ComponentModel.ISupportInitialize).EndInit()
         Me.SuperTabControlPanel5.ResumeLayout(False)
         Me.GroupPanel3.ResumeLayout(False)
         Me.Panel2.ResumeLayout(False)

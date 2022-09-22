@@ -133,7 +133,7 @@ Public Class F0_HotelReservaFicha
         'empiezo a discriminar solamente las cabañas que estan libres
         Dim i As Integer = 0
 
-        While i <= dt.Rows.Count - 1 Or dt.Rows.Count = 0
+        While i <= dt.Rows.Count - 1 'Or dt.Rows.Count = 0
             Dim fechaIni As Date = tbFechaIn.Value
             Dim ocupado As Boolean = False
             While fechaIni <= tbFechaOut.Value
@@ -157,7 +157,9 @@ Public Class F0_HotelReservaFicha
                 i = i + 1
             End If
         End While
-
+        If dt.Rows.Count = 0 Then
+            ToastNotification.Show(Me, "No existe cabañas disponibles para los datos seleccionados.".ToUpper, My.Resources.WARNING, 4000, eToastGlowColor.Red, eToastPosition.TopCenter)
+        End If
 
         grCabañas.DataSource = dt
         grCabañas.RetrieveStructure()
