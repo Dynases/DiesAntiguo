@@ -1019,6 +1019,12 @@
       <DependentUpon>R_ListarSocioPaganMortuoria.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Reportes\R_NotaVentaNueva.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>R_NotaVentaNueva.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Reportes\R_ReciboMortuoria.vb">
       <DependentUpon>R_ReciboMortuoria.rpt</DependentUpon>
       <AutoGen>True</AutoGen>
@@ -1724,6 +1730,10 @@
     <EmbeddedResource Include="Reportes\R_ListarSocioPaganMortuoria.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>R_ListarSocioPaganMortuoria.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\R_NotaVentaNueva.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>R_NotaVentaNueva.vb</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Reportes\R_ReciboMortuoria.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>

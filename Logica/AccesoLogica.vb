@@ -11600,6 +11600,18 @@ Public Class AccesoLogica
 
         Return _Tabla
     End Function
+    Public Shared Function L_fnReciboSocios(numi As Integer) As DataTable
+        Dim _Tabla As DataTable
+
+        Dim _listParam As New List(Of Datos.DParametro)
+
+        _listParam.Add(New Datos.DParametro("@tipo", 29))
+        _listParam.Add(New Datos.DParametro("@uact", L_Usuario))
+        _listParam.Add(New Datos.DParametro("@vcnumi", numi))
+        _Tabla = D_ProcedimientoConParam("sp_go_TCS014", _listParam)
+
+        Return _Tabla
+    End Function
     Public Shared Function L_fnFacturaAyudaPagoSocios(numi As Integer) As DataTable
         Dim _Tabla As DataTable
 

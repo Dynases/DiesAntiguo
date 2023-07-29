@@ -656,7 +656,8 @@ Public Class F0_PagosSocio
     Private Sub P_Grabar()
         If (Nuevo) Then
             If (P_Validar(2)) Then
-                If (Grabar = 2 And _fnObtenerNit()) Then
+                'If (Grabar = 2 And _fnObtenerNit()) Then
+                If (Grabar = 2) Then
 
                     'CODIGO DANNY--------------------------------
                     If (FacturaSocio = True) Then
@@ -716,6 +717,11 @@ Public Class F0_PagosSocio
                         InsertVenta = L_fnSocioVentaDicontaPagosGrabar(numiVentas, Numi, total, Dt2FechaPago.Value.ToString("yyyy/MM/dd"), Obs)
                     End If
 
+
+                    InsertVenta = L_fnSocioVentaDicontaPagosGrabar(numiVentas, Numi, total, Dt2FechaPago.Value.ToString("yyyy/MM/dd"), Obs)
+
+
+
                     If (InsertVenta = False) Then
                         ToastNotification.Show(Me, "No se pudo grabar el pago de socio con numero de socio ".ToUpper + TbiNroSocio.Value.ToString + ", intente nuevamente.".ToUpper,
                                          My.Resources.WARNING,
@@ -735,9 +741,11 @@ Public Class F0_PagosSocio
                     DtPagosMor = CType(DgdMortuoria.PrimaryGrid.DataSource, DataTable)
                     If (DtPagosMor.Rows(0).Item("estado") = 2 Or DtPagosMor.Rows(0).Item("estado2") = 2) Then
                         P_prImprimirRecibo(Numi, True, True, numiVentas)
+
                     Else
                         dt_detalle = L_fnSocioObtenerDetallePagoFactura(numiVentas)
-                        P_fnGenerarFactura(numiVentas)
+                        P_prImprimirRecibosPagos(numiVentas, True, True)
+                        'P_fnGenerarFactura(numiVentas)
                     End If
 
 
@@ -815,6 +823,58 @@ Public Class F0_PagosSocio
             End If
         End If
         P_ActualizarPuterosNavegacion()
+    End Sub
+
+    Private Sub P_prImprimirRecibosPagos(numi As String, impFactura As Boolean, grabarPDF As Boolean)
+
+        Dim _Ds, _Ds1, _Ds2 As New DataSet
+        Dim _Literal, _TotalDecimal, _TotalDecimal2 As String
+        Dim I As Integer
+        Dim ice, _Desc, _TotalLi As Decimal
+        Dim _VistaPrevia As Integer = 0
+
+        Dim dt As DataTable = L_fnReciboSocios(numi)
+
+        'Literal 
+        _TotalLi = Tbd1Monto.Text
+
+        _TotalDecimal = _TotalLi - Math.Truncate(_TotalLi)
+        _TotalDecimal2 = CDbl(_TotalDecimal) * 100
+
+        ''Dim li As String = Facturacion.ConvertirLiteral.A_fnConvertirLiteral(CDbl(_Total) - CDbl(_TotalDecimal)) + " con " + IIf(_TotalDecimal2.Equals("0"), "00", _TotalDecimal2) + "/100 Bolivianos"
+        Dim cad1 As String = Facturacion.ConvertirLiteral.A_fnConvertirLiteral(CDbl(_TotalLi) - CDbl(_TotalDecimal)).ToString()
+
+        _Literal = cad1 + " con " + IIf(_TotalDecimal2.Equals("0"), "00", _TotalDecimal2) + "/100 Bolivianos"
+
+
+
+        If (impFactura) Then
+            P_Global.Visualizador = New Visualizador 'Comentar
+
+            Dim objrep As Object = Nothing
+
+            objrep = New R_NotaVentaNueva
+
+
+            objrep.SetDataSource(dt)
+            objrep.SetParameterValue("nombreFactura", Tb2NombreSocio.Text)
+            objrep.SetParameterValue("TotalBs", _Literal)
+            objrep.SetParameterValue("descuento", dt.Rows(0).Item("descuento"))
+            objrep.SetParameterValue("contado", "CONTADO")
+            objrep.SetParameterValue("vendedor", gs_user)
+            objrep.SetParameterValue("sucursal", "SUCURSAL PRINCIPAL")
+            objrep.SetParameterValue("nrofac", numi)
+            objrep.SetParameterValue("glosa", TbiNroSocio.Value.ToString + " - " + Tb2NombreSocio.Text.Trim)
+
+            P_Global.Visualizador.CRV1.ReportSource = objrep 'Comentar
+            P_Global.Visualizador.ShowDialog() 'Comentar
+            P_Global.Visualizador.BringToFront() 'Comentar
+
+
+            Dim pd As New PrintDocument()
+
+        End If
+
     End Sub
 
     Private Sub P_Cancelar()
@@ -960,13 +1020,13 @@ Public Class F0_PagosSocio
                 End If
             End If
             If (FacturaSocio = False) Then
-                If (Tb3NroRecibo.Text = String.Empty) Then
-                    If (sms = String.Empty) Then
-                        sms = "el campo recibo no puede quedar vacio, debe poner un número de recibo.".ToUpper
-                    Else
-                        sms = sms + ChrW(13) + "el campo recibo no puede quedar vacio, debe poner un número de recibo.".ToUpper
-                    End If
-                End If
+                'If (Tb3NroRecibo.Text = String.Empty) Then
+                '    If (sms = String.Empty) Then
+                '        sms = "el campo recibo no puede quedar vacio, debe poner un número de recibo.".ToUpper
+                '    Else
+                '        sms = sms + ChrW(13) + "el campo recibo no puede quedar vacio, debe poner un número de recibo.".ToUpper
+                '    End If
+                'End If
             End If
 
 
@@ -989,21 +1049,21 @@ Public Class F0_PagosSocio
                     If (c1.Value = 1) Then
                         If (DgdMortuoria.PrimaryGrid.GetCell(0, DgdMortuoria.PrimaryGrid.Columns("rec").ColumnIndex).Value = 0 Or
                            DgdMortuoria.PrimaryGrid.GetCell(0, DgdMortuoria.PrimaryGrid.Columns("rec").ColumnIndex).Value.ToString = String.Empty) Then
-                            If (sms = String.Empty) Then
-                                sms = "la columna de recibo no puede quedar vacio o en cero, debe poner un número de recibo.".ToUpper
-                            Else
-                                sms = sms + ChrW(13) + "la columna de recibo no puede quedar vacio o en cero, debe poner un número de recibo".ToUpper
-                            End If
+                            'If (sms = String.Empty) Then
+                            '    sms = "la columna de recibo no puede quedar vacio o en cero, debe poner un número de recibo.".ToUpper
+                            'Else
+                            '    sms = sms + ChrW(13) + "la columna de recibo no puede quedar vacio o en cero, debe poner un número de recibo".ToUpper
+                            'End If
                         End If
                     End If
                     If (c2.Value = 1) Then
                         If (DgdMortuoria.PrimaryGrid.GetCell(0, DgdMortuoria.PrimaryGrid.Columns("rec2").ColumnIndex).Value = 0 Or
                            DgdMortuoria.PrimaryGrid.GetCell(0, DgdMortuoria.PrimaryGrid.Columns("rec2").ColumnIndex).Value.ToString = String.Empty) Then
-                            If (sms = String.Empty) Then
-                                sms = "la columna de recibo no puede quedar vacio o en cero, debe poner un número de recibo".ToUpper
-                            Else
-                                sms = sms + ChrW(13) + "la columna de recibo no puede quedar vacio o en cero, debe poner un número de recibo".ToUpper
-                            End If
+                            'If (sms = String.Empty) Then
+                            '    sms = "la columna de recibo no puede quedar vacio o en cero, debe poner un número de recibo".ToUpper
+                            'Else
+                            '    sms = sms + ChrW(13) + "la columna de recibo no puede quedar vacio o en cero, debe poner un número de recibo".ToUpper
+                            'End If
                         End If
                     End If
                 End If
