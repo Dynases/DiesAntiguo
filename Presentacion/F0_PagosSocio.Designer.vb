@@ -25,6 +25,8 @@ Partial Class F0_PagosSocio
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(F0_PagosSocio))
         Me.Pn1Cabecera = New DevComponents.DotNetBar.PanelEx()
         Me.GroupPanelDatosPago = New DevComponents.DotNetBar.Controls.GroupPanel()
+        Me.swPagosCM = New DevComponents.DotNetBar.Controls.SwitchButton()
+        Me.LabelX10 = New DevComponents.DotNetBar.LabelX()
         Me.QrFactura = New Gma.QrCodeNet.Encoding.Windows.Forms.QrCodeImgControl()
         Me.chPagoAnho = New DevComponents.DotNetBar.Controls.CheckBoxX()
         Me.rlMortuoria = New DevComponents.DotNetBar.Controls.ReflectionLabel()
@@ -56,8 +58,6 @@ Partial Class F0_PagosSocio
         Me.DgdMortuoria = New DevComponents.DotNetBar.SuperGrid.SuperGridControl()
         Me.Dgj1Busqueda = New Janus.Windows.GridEX.GridEX()
         Me.rlAccion = New DevComponents.DotNetBar.Controls.ReflectionLabel()
-        Me.LabelX10 = New DevComponents.DotNetBar.LabelX()
-        Me.swPagosCM = New DevComponents.DotNetBar.Controls.SwitchButton()
         CType(Me.SuperTabPrincipal, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuperTabPrincipal.SuspendLayout()
         Me.SuperTabControlPanelBuscador.SuspendLayout()
@@ -102,7 +102,7 @@ Partial Class F0_PagosSocio
         Me.SuperTabPrincipal.ControlBox.MenuBox.Name = ""
         Me.SuperTabPrincipal.ControlBox.Name = ""
         Me.SuperTabPrincipal.ControlBox.SubItems.AddRange(New DevComponents.DotNetBar.BaseItem() {Me.SuperTabPrincipal.ControlBox.MenuBox, Me.SuperTabPrincipal.ControlBox.CloseBox})
-        Me.SuperTabPrincipal.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.SuperTabPrincipal.Margin = New System.Windows.Forms.Padding(4)
         Me.SuperTabPrincipal.SelectedTabIndex = 1
         Me.SuperTabPrincipal.Size = New System.Drawing.Size(984, 651)
         Me.SuperTabPrincipal.Controls.SetChildIndex(Me.SuperTabControlPanelBuscador, 0)
@@ -112,13 +112,13 @@ Partial Class F0_PagosSocio
         '
         Me.SuperTabControlPanelBuscador.Controls.Add(Me.Dgj1Busqueda)
         Me.SuperTabControlPanelBuscador.Location = New System.Drawing.Point(0, 23)
-        Me.SuperTabControlPanelBuscador.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
-        Me.SuperTabControlPanelBuscador.Padding = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.SuperTabControlPanelBuscador.Margin = New System.Windows.Forms.Padding(2)
+        Me.SuperTabControlPanelBuscador.Padding = New System.Windows.Forms.Padding(4)
         Me.SuperTabControlPanelBuscador.Size = New System.Drawing.Size(884, 538)
         '
         'SuperTabControlPanelRegistro
         '
-        Me.SuperTabControlPanelRegistro.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.SuperTabControlPanelRegistro.Margin = New System.Windows.Forms.Padding(4)
         Me.SuperTabControlPanelRegistro.Size = New System.Drawing.Size(984, 626)
         Me.SuperTabControlPanelRegistro.Controls.SetChildIndex(Me.PanelSuperior, 0)
         Me.SuperTabControlPanelRegistro.Controls.SetChildIndex(Me.PanelInferior, 0)
@@ -127,7 +127,7 @@ Partial Class F0_PagosSocio
         'PanelSuperior
         '
         Me.PanelSuperior.Controls.Add(Me.rlAccion)
-        Me.PanelSuperior.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.PanelSuperior.Margin = New System.Windows.Forms.Padding(4)
         Me.PanelSuperior.Size = New System.Drawing.Size(984, 72)
         Me.PanelSuperior.Style.Alignment = System.Drawing.StringAlignment.Center
         Me.PanelSuperior.Style.BackColor1.Color = System.Drawing.Color.Yellow
@@ -144,7 +144,7 @@ Partial Class F0_PagosSocio
         'PanelInferior
         '
         Me.PanelInferior.Location = New System.Drawing.Point(0, 590)
-        Me.PanelInferior.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.PanelInferior.Margin = New System.Windows.Forms.Padding(4)
         Me.PanelInferior.Size = New System.Drawing.Size(984, 36)
         Me.PanelInferior.Style.Alignment = System.Drawing.StringAlignment.Center
         Me.PanelInferior.Style.BackColor1.Color = System.Drawing.Color.Gold
@@ -195,13 +195,13 @@ Partial Class F0_PagosSocio
         'PanelToolBar2
         '
         Me.PanelToolBar2.Location = New System.Drawing.Point(904, 0)
-        Me.PanelToolBar2.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.PanelToolBar2.Margin = New System.Windows.Forms.Padding(4)
         '
         'PanelPrincipal
         '
         Me.PanelPrincipal.Controls.Add(Me.Pn2Detalle)
         Me.PanelPrincipal.Controls.Add(Me.Pn1Cabecera)
-        Me.PanelPrincipal.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.PanelPrincipal.Margin = New System.Windows.Forms.Padding(4)
         Me.PanelPrincipal.Size = New System.Drawing.Size(984, 518)
         Me.PanelPrincipal.Controls.SetChildIndex(Me.PanelUsuario, 0)
         Me.PanelPrincipal.Controls.SetChildIndex(Me.Pn1Cabecera, 0)
@@ -209,7 +209,7 @@ Partial Class F0_PagosSocio
         '
         'btnUltimo
         '
-        Me.btnUltimo.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.btnUltimo.Margin = New System.Windows.Forms.Padding(2)
         '
         'btnSiguiente
         '
@@ -223,7 +223,7 @@ Partial Class F0_PagosSocio
         'MPanelUserAct
         '
         Me.MPanelUserAct.Location = New System.Drawing.Point(784, 0)
-        Me.MPanelUserAct.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.MPanelUserAct.Margin = New System.Windows.Forms.Padding(4)
         '
         'MRlAccion
         '
@@ -307,12 +307,41 @@ Partial Class F0_PagosSocio
         Me.GroupPanelDatosPago.TabIndex = 2
         Me.GroupPanelDatosPago.Text = "DATOS DE PAGO"
         '
+        'swPagosCM
+        '
+        '
+        '
+        '
+        Me.swPagosCM.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square
+        Me.swPagosCM.Location = New System.Drawing.Point(119, 30)
+        Me.swPagosCM.Name = "swPagosCM"
+        Me.swPagosCM.OffText = "Pago Mortuoria"
+        Me.swPagosCM.OnText = "Pago Cuotas"
+        Me.swPagosCM.Size = New System.Drawing.Size(123, 22)
+        Me.swPagosCM.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled
+        Me.swPagosCM.TabIndex = 13
+        Me.swPagosCM.Value = True
+        Me.swPagosCM.ValueObject = "Y"
+        '
+        'LabelX10
+        '
+        '
+        '
+        '
+        Me.LabelX10.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square
+        Me.LabelX10.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LabelX10.Location = New System.Drawing.Point(3, 27)
+        Me.LabelX10.Name = "LabelX10"
+        Me.LabelX10.Size = New System.Drawing.Size(110, 23)
+        Me.LabelX10.TabIndex = 12
+        Me.LabelX10.Text = "Tipo de Pago:"
+        '
         'QrFactura
         '
         Me.QrFactura.ErrorCorrectLevel = Gma.QrCodeNet.Encoding.ErrorCorrectionLevel.M
         Me.QrFactura.Image = CType(resources.GetObject("QrFactura.Image"), System.Drawing.Image)
         Me.QrFactura.Location = New System.Drawing.Point(299, 140)
-        Me.QrFactura.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.QrFactura.Margin = New System.Windows.Forms.Padding(2)
         Me.QrFactura.Name = "QrFactura"
         Me.QrFactura.QuietZoneModule = Gma.QrCodeNet.Encoding.Windows.Render.QuietZoneModules.Two
         Me.QrFactura.Size = New System.Drawing.Size(32, 28)
@@ -462,6 +491,7 @@ Partial Class F0_PagosSocio
         Me.LabelX6.Size = New System.Drawing.Size(110, 23)
         Me.LabelX6.TabIndex = 5
         Me.LabelX6.Text = "Nro. Recibo:"
+        Me.LabelX6.Visible = False
         '
         'LabelX5
         '
@@ -490,6 +520,7 @@ Partial Class F0_PagosSocio
         Me.Tb3NroRecibo.Size = New System.Drawing.Size(100, 23)
         Me.Tb3NroRecibo.TabIndex = 1
         Me.Tb3NroRecibo.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
+        Me.Tb3NroRecibo.Visible = False
         '
         'Tbd1Monto
         '
@@ -799,7 +830,7 @@ Partial Class F0_PagosSocio
         Me.Pn2Detalle.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Pn2Detalle.Location = New System.Drawing.Point(434, 0)
         Me.Pn2Detalle.Name = "Pn2Detalle"
-        Me.Pn2Detalle.Padding = New System.Windows.Forms.Padding(5, 5, 5, 5)
+        Me.Pn2Detalle.Padding = New System.Windows.Forms.Padding(5)
         Me.Pn2Detalle.Size = New System.Drawing.Size(550, 518)
         Me.Pn2Detalle.Style.Alignment = System.Drawing.StringAlignment.Center
         Me.Pn2Detalle.Style.BackColor1.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground
@@ -852,41 +883,12 @@ Partial Class F0_PagosSocio
         Me.rlAccion.TabIndex = 10
         Me.rlAccion.Text = "<b><font size=""+10""><font color=""#FF0000""></font></font></b>"
         '
-        'LabelX10
-        '
-        '
-        '
-        '
-        Me.LabelX10.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square
-        Me.LabelX10.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelX10.Location = New System.Drawing.Point(3, 27)
-        Me.LabelX10.Name = "LabelX10"
-        Me.LabelX10.Size = New System.Drawing.Size(110, 23)
-        Me.LabelX10.TabIndex = 12
-        Me.LabelX10.Text = "Tipo de Pago:"
-        '
-        'swPagosCM
-        '
-        '
-        '
-        '
-        Me.swPagosCM.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square
-        Me.swPagosCM.Location = New System.Drawing.Point(119, 30)
-        Me.swPagosCM.Name = "swPagosCM"
-        Me.swPagosCM.OffText = "Pago Mortuoria"
-        Me.swPagosCM.OnText = "Pago Cuotas"
-        Me.swPagosCM.Size = New System.Drawing.Size(123, 22)
-        Me.swPagosCM.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled
-        Me.swPagosCM.TabIndex = 13
-        Me.swPagosCM.Value = True
-        Me.swPagosCM.ValueObject = "Y"
-        '
         'F0_PagosSocio
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(984, 651)
-        Me.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Margin = New System.Windows.Forms.Padding(4)
         Me.Name = "F0_PagosSocio"
         Me.Text = "F0_PagosSocio"
         Me.Controls.SetChildIndex(Me.SuperTabPrincipal, 0)

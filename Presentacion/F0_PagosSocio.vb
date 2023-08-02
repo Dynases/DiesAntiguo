@@ -744,6 +744,7 @@ Public Class F0_PagosSocio
 
                     Else
                         dt_detalle = L_fnSocioObtenerDetallePagoFactura(numiVentas)
+                        L_fnActualizarNroFactura(numiVentas, numiVentas)
                         P_prImprimirRecibosPagos(numiVentas, True, True)
                         'P_fnGenerarFactura(numiVentas)
                     End If
